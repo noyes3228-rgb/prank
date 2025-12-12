@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Surprise!</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
+            cursor: pointer; /* Shows a hand icon when hovering */
+        }
+        #prank-image {
+            max-width: 80%;
+            max-height: 80%;
+            height: auto;
+            width: auto;
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="prank-container">
+        <img id="prank-image" src="Prank.jpg" alt="A fun surprise">
+    </div>
+
+    <audio id="prank-audio" loop>
+        <source src="Scream.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // Use the whole body to listen for a single click
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('prank-audio');
+            audio.play();
+            audio.volume = 1.0; 
+        }, { once: true }); // The music only plays on the first click
+    </script>
+</body>
+</html>
